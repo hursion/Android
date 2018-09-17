@@ -40,4 +40,5 @@ Ensure adb and aapt are in your system path. The following command assumes you'v
   以上主要是需要把aapt加入环境变量中，unisoc之前的方法是直接将aapt复制到/usr/bin中执行，没有配置环境变量，但是在build-tools/28.0.2中遇到上述问题，地位aapt执行共享库出问题，cd 到build-tools/28.0.2单独执行./aapt成功。
   至此，可以断定aapt需要 libc++.so加入环境变量。
   于是执行解决.可加入.bashrc中：
+  
   `export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/local/SPREADTRUM/hursion.zhang/.local/share/Trash/files/28.0.2/lib64`
